@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 .caixa{
   background-color: #EFF6FB;
-
-}
+} 
 
 .titulo{
   color: #F18F01 !important;
   font-weight: bold !important;
-}
+  font-family: 'Merriweather',sans-serif !important;
+} 
+
 
 .subtitulo{
-  color: #449DD1 !important;
+  color: #595959 !important;
   font-weight: bold !important;
-}
+  font-family: 'Josefin Sans',sans-serif !important; 
+}  
 
 .botao{
   border-color: white !important;
-  background-color: #C589E8 !important;
-  color: white !important
+  background-color: #F2C894 !important;
+  color: black !important;
 }
 
 .postagens{
