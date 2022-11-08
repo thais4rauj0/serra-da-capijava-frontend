@@ -15,10 +15,10 @@ function App() {
       <Router>
         <Navbar />
           <Routes>
-            <Route path="/home" element={<Home />}/>
-            <Route path="/sobre" element={<Sobre />}/>
-            <Route path="/login" element={<Login />}/>
-            <Route path="/cadastro" element={<CadastroUsuario />}/>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           </Routes>
         <Footer />
       </Router>

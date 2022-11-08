@@ -1,16 +1,72 @@
-import React from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { cadastroUsuario } from "../../service/Service";
+import User from '../../model/UserLogin';
 import "./CadastroUsuario.css";
 
 function CadastroUsuario() {
+  let navigate = useNavigate();
+  const [confirmarSenha, setConfirmarSenha] = useState<String>("");
+  const [user, setUser] = useState<User>({
+    id: 0,
+    usuario: "",
+    senha: "",
+    nome: "",
+    endereco: '',
+    cpf: 0,
+    telefone: 0,
+    rg: 0,
+    foto: "",
+  });
+
+  const [userResult, setUserResult] = useState<User>({
+    id: 0,
+    usuario: "",
+    senha: "",
+    nome: "",
+    endereco: '',
+    cpf: 0,
+    telefone: 0,
+    rg: 0,
+    foto: "",
+
+  });
+
+  useEffect(() => {
+    if (userResult.id !== 0) {
+      navigate("/login");
+    }
+  }, [userResult]);
+
+  function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
+    setConfirmarSenha(e.target.value);
+  }
+
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  }
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if(confirmarSenha == user.senha){ //verifica se o confirmar senha é igual a senha
+    cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+    alert('Usuario cadastrado com sucesso')
+    }else{
+        alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+    }
+}
+    
+  
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
       <Grid item xs={6} className="imagem2" ></Grid>
       <Grid item xs={6} alignItems="center">
         <Box padding={10}>
-          <form>
+          <form onSubmit={onSubmit}>
             <Typography
               variant="h3"
               gutterBottom
@@ -22,6 +78,8 @@ function CadastroUsuario() {
               Cadastrar
             </Typography>
             <TextField
+            value={user.nome}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
               label="nome"
               variant="outlined"
@@ -30,6 +88,8 @@ function CadastroUsuario() {
               fullWidth
             />
             <TextField
+            value={user.endereco}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="endereco"
               label="endereço"
               variant="outlined"
@@ -38,6 +98,8 @@ function CadastroUsuario() {
               fullWidth
             />
             <TextField
+            value={user.cpf}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="cpf"
               label="cpf"
               variant="outlined"
@@ -46,6 +108,8 @@ function CadastroUsuario() {
               fullWidth
             />
             <TextField
+            value={user.telefone}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="telefone"
               label="telefone"
               variant="outlined"
@@ -55,6 +119,8 @@ function CadastroUsuario() {
             />
 
             <TextField
+            value={user.rg}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="rg"
               label="rg"
               variant="outlined"
@@ -64,6 +130,8 @@ function CadastroUsuario() {
             />
 
             <TextField
+            value={user.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="foto"
               label="foto"
               variant="outlined"
@@ -73,6 +141,8 @@ function CadastroUsuario() {
             />
 
             <TextField
+            value={user.usuario}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
               label="usuario"
               variant="outlined"
@@ -82,6 +152,8 @@ function CadastroUsuario() {
             />
 
             <TextField
+            value={user.senha}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
               label="senha"
               variant="outlined"
@@ -91,6 +163,10 @@ function CadastroUsuario() {
               fullWidth
             />
             <TextField
+            value={confirmarSenha}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              confirmarSenhaHandle(e)
+            }
               id="confirmarsenha"
               label="confirmar senha"
               variant="outlined"
