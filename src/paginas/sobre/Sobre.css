@@ -1,0 +1,42 @@
+.titulos{
+    align-items: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.boxFoto1{
+    align-items: center;
+    padding: 2px;
+    display: flex;
+}
+
+.imgBox1{
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.boxFoto2{
+    align-items: center;
+    padding: 2px;
+    display: flex;
+
+}
+
+.imgBox2{
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.imgEquipe{
+    width: 90px;
+    height: 120px;
+    align-items: flex-start;
+    border-radius: 8px;
+    margin-left: 10px;
+    
+}
+
+
+
