@@ -41,6 +41,11 @@ function Navbar() {
             </Box>
             <Box mx={1} style={{ cursor: "pointer" }}>
               <Typography variant="h6" color="inherit">
+               Sobre
+              </Typography>
+            </Box>
+            <Box mx={1} style={{ cursor: "pointer" }}>
+              <Typography variant="h6" color="inherit">
                 Sair
               </Typography>
             </Box>
