@@ -8,14 +8,14 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokenReduce";
 
 function Home() {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
 
 
     useEffect(() => {
       if (token == "") {
         alert("Você precisa estar logado", );
-        history("/login");
+        navigate("/login");
 
       }}, [token]);
     return (

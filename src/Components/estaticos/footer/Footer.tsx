@@ -8,15 +8,16 @@ import { useNavigate } from 'react-router-dom';
 import { addToken } from '../../../store/tokens/Action';
 
 
+
 function Footer() {
   const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
   const dispatch = useDispatch();
-   let history = useNavigate();
+   let navigate = useNavigate();
  
    function goLogout() {
  dispatch(addToken(''));
      alert("Usuário deslogado");
-     history("/login");
+     navigate("/login");
    }
  
    var footerComponent;
@@ -49,3 +50,6 @@ function Footer() {
       {footerComponent}
     </>
   )
+  }
+
+  export default Footer;

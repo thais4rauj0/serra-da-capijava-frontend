@@ -55,7 +55,7 @@ function Login() {
     if (token !== "") {
 
       dispatch(addToken(token));
-      history("/home");
+      navigate("/home");
     }
   }, [token]);
     
