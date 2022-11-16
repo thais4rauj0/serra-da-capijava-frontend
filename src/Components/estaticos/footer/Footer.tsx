@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { Typography, Grid } from '@material-ui/core';
 import { Box } from '@mui/material'
@@ -49,6 +49,3 @@ function Footer() {
       {footerComponent}
     </>
   )
-}
-
-export default Footer;

@@ -1,10 +1,23 @@
-.cursor{
-    cursor:'pointer';
-    color:'white'
+
+.barra{
+    background-color: #f27544;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.textos{
+    display: flex;
+    gap: 1.5rem;
 
 }
 
+.typo{
+    cursor: pointer;
+    color: white;
+    cursor: pointer;
+}
+
 .text-decorator-none{
-    text-decoration: none ;
-    color: white
+    text-decoration: none;
 }
