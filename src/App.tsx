@@ -14,21 +14,18 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-
     <Provider store={store}>
-      <ToastContainer />
-      <>
-        <Router>
-          <Navbar />
+      <Router>
+        <Navbar />
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           </Routes>
-          <Footer />
-        </Router>
-      </>
+        <Footer />
+      </Router>
     </Provider>
   )
 }
