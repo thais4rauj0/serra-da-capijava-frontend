@@ -1,26 +1,19 @@
 import React from "react";
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { Typography, Grid } from '@material-ui/core';
-import { Box } from '@mui/material'
-import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/TokenReduce';
-import { useNavigate } from 'react-router-dom';
-import { addToken } from '../../../store/tokens/Action';
-
-
+import FacebookIcon from '@material-ui/icons/Facebook';
+import { Box, Grid, Typography } from "@mui/material";
+import "./Footer.css"
+import { useSelector } from "react-redux";
+import { TokenState } from "stor"
 
 function Footer() {
-  const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
-  const dispatch = useDispatch();
-   let navigate = useNavigate();
- 
-   function goLogout() {
- dispatch(addToken(''));
-     alert("Usuário deslogado");
-     navigate("/login");
-   }
- 
-   var footerComponent;
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+    var footerComponent;
+
+
    if (token !== ""){
     footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center">
     <Grid alignItems="center" item xs={12}>
