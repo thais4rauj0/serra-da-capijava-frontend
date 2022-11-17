@@ -6,23 +6,30 @@ import Sobre from './paginas/sobre/Sobre';
 import Login from './paginas/login/Login'
 import CadastroUsuario from './paginas/cadastro/CadastroUsuario';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './store/Store';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
+
+    <Provider store={store}>
+      <ToastContainer />
+      <>
+        <Router>
+          <Navbar />
           <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           </Routes>
-        <Footer />
-      </Router>
-    </>
+          <Footer />
+        </Router>
+      </>
+    </Provider>
   )
 }
 
