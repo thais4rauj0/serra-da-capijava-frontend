@@ -6,9 +6,10 @@ import Sobre from './paginas/sobre/Sobre';
 import Login from './paginas/login/Login'
 import CadastroUsuario from './paginas/cadastro/CadastroUsuario';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './store/Store';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
