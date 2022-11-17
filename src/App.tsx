@@ -7,11 +7,13 @@ import Login from './paginas/login/Login'
 import CadastroUsuario from './paginas/cadastro/CadastroUsuario';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './store/Store';
 
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Router>
         <Navbar />
           <Routes>
@@ -22,7 +24,7 @@ function App() {
           </Routes>
         <Footer />
       </Router>
-    </>
+    </Provider>
   )
 }
 
