@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastrarPost.css';
+import './CadastroProdutos.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Categoria from '../../../model/Categoria';
 
@@ -65,7 +65,7 @@ categoria: null
 }, [id])
   
 async function getCategoria() {
-    await busca("/categoria", setCategoria,{
+    await busca("/categoria", setCategorias,{
         headers:{
             'Authorization':token
         }
@@ -73,7 +73,7 @@ async function getCategoria() {
     
 }
 
-async function findByIdPostagem(id:string) {
+async function findByIdProdutos(id:string) {
     await buscaId(`produtos/${id}`, setProdutos, {
         headers:{
             'Authorization':token
@@ -133,7 +133,7 @@ async function onSubmit(e: ChangeEvent<HTMLFormElement>){
 }
 
 function back(){
-    navigate('/produtos')
+    navigate('/produtos/all')
 }
     return (
         <Container maxWidth="sm" className="topo">

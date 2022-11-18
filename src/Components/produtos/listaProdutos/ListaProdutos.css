@@ -1,0 +1,25 @@
+.input::placeholder {
+    color: #9e9ea7;
+  }
+  
+  .input:focus,
+  input:hover {
+    outline: none;
+    border-color: rgba(234, 76, 137, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  }
+  .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 390px;
+    margin: 1rem auto;
+  }
+  .icon {
+    fill: #9e9ea7;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer
+  }

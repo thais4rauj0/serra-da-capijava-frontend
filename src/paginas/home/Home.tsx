@@ -6,6 +6,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokenReduce";
+import { toast } from "react-toastify";
 
 function Home() {
     const navigate = useNavigate();
@@ -13,10 +14,18 @@ function Home() {
 
 
     useEffect(() => {
-      if (token == "") {
-        alert("Você precisa estar logado", );
-        navigate("/login");
-
+        if (token == "") {
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            navigate("/login")
       }}, [token]);
     return (
         <>
@@ -33,7 +42,7 @@ function Home() {
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
+                    <img src="https://i.imgur.com/clJVUH7.png" alt="" width="500px" height="500px" />
                 </Grid>
                 <Grid xs={12} className="postagens">
                 </Grid>

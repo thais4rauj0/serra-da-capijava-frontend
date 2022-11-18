@@ -8,7 +8,7 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import "./ListaTema.css";
+import "./ListaCategoria.css";
 import Categoria from '../../../model/Categoria';
 import { busca } from "../../../service/Service";
 import { useSelector } from "react-redux";
@@ -39,7 +39,7 @@ function ListaCategoria() {
   }, [token]);
 
   async function getCategoria() {
-    await busca("/categoria", getCategoria, {
+    await busca("/categoria", setCategoria, {
       headers: {
         'Authorization': token,
       },
@@ -65,7 +65,7 @@ function ListaCategoria() {
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
-                  to={`/formularioCategoria/${categoria.id}`}
+                  to={`/cadastroCategoria/${categoria.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>

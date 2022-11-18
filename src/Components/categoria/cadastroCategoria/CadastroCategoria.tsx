@@ -2,7 +2,7 @@ import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import Categoria from '../../../model/Categoria';
 import { buscaId, post, put } from '../../../service/Service';
-import './CadastroTema.css'
+import './CadastroCategoria.css'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokenReduce';
@@ -120,4 +120,4 @@ function CadastroCategoria() {
     )
 }
 
-export default <CadastroCategoria></CadastroCategoria>;
+export default CadastroCategoria;

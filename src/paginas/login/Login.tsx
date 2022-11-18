@@ -8,6 +8,7 @@ import UserLogin from '../../model/UserLogin';
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../store/tokens/Action';
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -53,15 +54,31 @@ function Login() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    try {
-      await login(`/usuarios/logar`, userLogin, setToken);
-
-      alert("Usuário logado com sucesso ");
-    } catch (error) {
-      alert("Dados não correspondem.");
-    }
+    try{
+      await login(`/usuarios/logar`, userLogin, setToken)
+      toast.success('Usuário logado com sucesso!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+          });
+  }catch(error){
+      toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+          });
+        }
   }
-
   useEffect(() => {
     if (token !== "") {
 
@@ -74,7 +91,7 @@ function Login() {
         <Grid container direction="row" justifyContent="center" alignItems="center" className="fundo">
             <Grid alignItems="center" xs={6}>
                 <Box paddingX={20}>
-                    <form onSubmit={onSubmit}>
+                    <form className="formulario" onSubmit={onSubmit}>
                         <Typography variant="h3" gutterBottom component="h3" align="center" className="textos1">Entrar</Typography>
                         <TextField  value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="Usuário (E-mail)" variant="outlined" name="usuario" margin="normal" fullWidth />
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="Senha" variant="outlined" name="senha" margin="normal" type='password'fullWidth />
@@ -84,7 +101,7 @@ function Login() {
                     </form>
                     <Box display="flex" justifyContent="center" marginTop={2}>
                         <Box marginRight={1}>
-                            <Typography variant="subtitle1" gutterBottom align="center">Não tem uma conta?</Typography>
+                            <Typography className="Conta" variant="subtitle1" gutterBottom align="center">Não tem uma conta?</Typography>
                         </Box>
               <Link to="/cadastrousuario">
               <Typography
@@ -92,6 +109,7 @@ function Login() {
                 gutterBottom
                 align="center"
                 className="cadastroBtn"
+                
               >
                 Cadastre-se
               </Typography>
