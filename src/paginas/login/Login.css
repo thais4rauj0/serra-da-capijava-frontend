@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family= Merriweather & display = swap');
+
+
 .textos1{
   font-weight: bold !important;
 }
@@ -12,6 +16,13 @@
   background-color: #FDFBF7;
 }
 
+.formulario{
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+
+
+
 .text-decorator-none{
   text-decoration: none;
 }
@@ -21,12 +32,14 @@
 } */
 
 .textos1{
-  color: #02732A
+  color: #02732A;
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 .loginBtn{
   background-color: #caa78b !important;
-  color: white
+  color: white;
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 
 .loginBtn:disabled{
@@ -37,4 +50,9 @@
   color: #f27544;
   font-weight: bold !important;
   text-decoration: none !important;
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.Conta{
+  font-family: 'Josefin Sans', sans-serif !important;
 }

@@ -31,7 +31,7 @@ function Sobre() {
           src="https://i.imgur.com/C0ZLn4c.jpg"
           alt="Foto de uma onça pintada"
         />
-        <Typography>
+        <Typography className="SegundoParagrafo">
         O Parque Nacional Serra da Capivara foi criado em 1979, para preservar vestígios arqueológicos da mais remota presença do homem na América do Sul. Sua demarcação foi concluída em 1990 e o parque é subordinado ao Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio). Por sua importância, a Unesco o inscreveu na Lista do Patrimônio Mundial em 13 de dezembro de 1991, e também na Lista Indicativa brasileira como patrimônio misto. 
         </Typography>
       </Box>  
@@ -111,7 +111,7 @@ function Sobre() {
           <h2>Erika Feijo</h2>
           
           <div className="icons">
-            <a target="_blank" href="https://www.linkedin.com/in/daniela-rocha-a6337932/"><LinkedInIcon /></a>
+            <a target="_blank" href="https://www.linkedin.com/in/erikafeijo/"><LinkedInIcon /></a>
             <a target="_blank" href="https://github.com/erikafeijo"><GitHub /></a>                                 
           </div>
         </div>
@@ -169,7 +169,6 @@ function Sobre() {
       <div className="back">
         <div className="back-content">
           <h2>Thais Araújo</h2>
-         
           <div className="icons">
             <a target="_blank" href="https://www.linkedin.com/in/thais4rauj0/"><LinkedInIcon /></a>
             <a target="_blank" href="https://github.com/thais4rauj0 "><GitHub /></a>                                 
