@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family= Merriweather & display = swap');
+
 .cursor{
     cursor:'pointer';
     color:'white'
@@ -7,4 +10,9 @@
 .text-decorator-none{
     text-decoration: none ;
     color: white
+}
+
+.Navebar{
+    font-family: 'Merriweather', sans-serif !important;
+    
 }
