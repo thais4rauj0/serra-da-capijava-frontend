@@ -2,11 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family= Merriweather & display = swap");
 @import url("https://fonts.googleapis.com/css2?family=Hind+Guntur&display=swap");
 .titulos {
+  text-align: center;
   align-items: center;
   font-weight: bold;
-  padding: 10px;
-  font-size: 20px !important;
-  font-family: "Merriweather", sans-serif !important;
+  padding: .5rem;
+  margin: 2rem 0!important;
+  font-size: 2rem !important;
+  font-family: "Josefin Sans", sans-serif !important;
+  color: #dda25b;
+  background-color: #F2EBDF;
+  
 }
 
 .boxFoto1 p {
@@ -27,9 +32,13 @@
   font-family: "Hind Guntur Light", sans-serif !important;
 }
 
+.texto1{
+  font-family: "Hind Guntur Light", sans-serif !important;
+}
+
 .imgBox1 {
-  width: 100px;
-  height: 100px;
+  width: 90%;
+  height: 90%;
   border-radius: 8px;
 }
 

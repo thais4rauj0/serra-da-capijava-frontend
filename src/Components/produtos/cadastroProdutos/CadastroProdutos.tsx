@@ -46,6 +46,7 @@ descricao: '',
 preco: 0,
 tamanho: '',
 quantidade: 0,
+foto: "",
     
 categoria: null
   })
@@ -138,12 +139,13 @@ function back(){
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit} >
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro produtos</Typography>
-                <TextField value={produtos.nome}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
-                <TextField value={produtos.descricao}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produtos.preco}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="preco" label="Preço" name="preco" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produtos.tamanho}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="tamanho" label="Tamanho" name="tamanho" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produtos.quantidade}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="quantidade" label="Quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
+                <Typography variant="h4" component="h1" align="center" className="textoForm">Cadastro de Produtos</Typography>
+                <TextField value={produtos.nome}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" required fullWidth />
+                <TextField value={produtos.descricao}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" required fullWidth />
+                <TextField value={produtos.preco}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="preco" label="Preço" name="preco" variant="outlined" margin="normal" required fullWidth />
+                <TextField value={produtos.tamanho}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="tamanho" label="Tamanho" name="tamanho" variant="outlined" margin="normal" required fullWidth />
+                <TextField value={produtos.quantidade}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="quantidade" label="Quantidade" name="quantidade" variant="outlined" margin="normal" required fullWidth />
+                <TextField value={produtos.foto}  onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedProdutos(e)} id="foto" placeholder="Link da Foto" label="Foto" name="foto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
@@ -160,7 +162,7 @@ function back(){
                             }
                     </Select>
                     <FormHelperText>Escolha uma categoria  para cadastrar </FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" disabled={categoria.id === 0} className="btnFinalizar">
                         Finalizar
                     </Button>
                 </FormControl>

@@ -1,16 +1,17 @@
 
 import React, { useEffect } from "react";
-import { Button, ButtonBaseActions} from "@material-ui/core"
+import { Button, ButtonBaseActions } from "@material-ui/core"
 import "./Home.css";
 import { Box, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokenReduce";
 import { toast } from "react-toastify";
+import TabProdutos from "../../Components/produtos/tabProdutos/TabProdutos";
 
 function Home() {
     const navigate = useNavigate();
-    const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
+    const token = useSelector<TokenState, TokenState["tokens"]>((state) => state.tokens);
 
 
     useEffect(() => {
@@ -26,7 +27,8 @@ function Home() {
                 progress: undefined,
             });
             navigate("/login")
-      }}, [token]);
+        }
+    }, [token]);
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className="caixa">
@@ -44,9 +46,10 @@ function Home() {
                 <Grid item xs={6} >
                     <img src="https://i.imgur.com/clJVUH7.png" alt="" width="500px" height="500px" />
                 </Grid>
-                <Grid xs={12} className="postagens">
+                <Grid xs={12} className="produtos">
                 </Grid>
             </Grid>
+            <TabProdutos />
         </>
     );
 }

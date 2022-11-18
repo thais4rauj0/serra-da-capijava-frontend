@@ -75,13 +75,24 @@ function ListaProdutos() {
   return (
     <>
       <div className="group">
-      <input placeholder="Search" type="search" className="input" name='busca' onChange={(event: ChangeEvent<HTMLInputElement>) => updateBusca(event)} />
-      <svg className="icon" onClick={buscaProduto} aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
-    </div>
+        <input placeholder="Procurar produto" type="Procurar" className="input" name='busca' onChange={(event: ChangeEvent<HTMLInputElement>) => updateBusca(event)} />
+        <svg className="icon" onClick={buscaProduto} aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+      </div>
     
-      {produtos.map((produtos, index) => (
-        <Box m={2}>
-          <Card variant="outlined">
+    <Box className="containerLista">
+    
+    {produtos.length === 0 && <div className="preloader-inner">
+          <span className="dot"></span>
+          <div className="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>}
+
+    {produtos.map((produtos, index) => (
+        <Box alignSelf="flex-start" >
+          <Card variant="outlined" className="produtos">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 Produtos
@@ -112,14 +123,9 @@ function ListaProdutos() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="marginLeft"
-                      size="small"
-                      color="primary"
-                    >
-                      atualizar
-                    </Button>
+                  <Button variant="contained" size='small' className="btnAtualizar" >
+                          atualizar
+                        </Button>
                   </Box>
                 </Link>
                 <Link
@@ -127,9 +133,9 @@ function ListaProdutos() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      deletar
-                    </Button>
+                    <Button variant="contained" size='small' color="secondary" className="btnDeletar">
+                          deletar
+                        </Button>
                   </Box>
                 </Link>
               </Box>
@@ -137,6 +143,8 @@ function ListaProdutos() {
           </Card>
         </Box>
        ))}
+    </Box>
+
        </>
      );
    }

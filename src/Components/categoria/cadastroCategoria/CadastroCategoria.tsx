@@ -110,9 +110,9 @@ function CadastroCategoria() {
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro Categoria</Typography>
+                <Typography variant="h4" component="h1" align="center" className="textoForm">Formulário de cadastro Categoria</Typography>
                 <TextField value={categoria.tipos} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedcategoria(e)} id="tipos" label="tipos" variant="outlined" name="tipos" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className="btnFinalizar">
                     Finalizar
                 </Button>
             </form>
