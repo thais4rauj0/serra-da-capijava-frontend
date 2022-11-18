@@ -39,6 +39,17 @@ function Login() {
     });
   }
 
+  const [loginForm, setLoginForm] = useState(true)
+
+  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  useEffect(() => {
+    if(userLogin.usuario.match(padraoEmail) && userLogin.senha.length >= 8) {
+      setLoginForm(false)
+    } else {
+      setLoginForm(true)
+    }
+  }, [userLogin])
+
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -60,15 +71,15 @@ function Login() {
   }, [token]);
     
     return (
-        <Grid container direction="row" justifyContent="center" alignItems="center">
+        <Grid container direction="row" justifyContent="center" alignItems="center" className="fundo">
             <Grid alignItems="center" xs={6}>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="textos1">Entrar</Typography>
+                        <Typography variant="h3" gutterBottom component="h3" align="center" className="textos1">Entrar</Typography>
                         <TextField  value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="usuario" label="Usuário (E-mail)" variant="outlined" name="usuario" margin="normal" fullWidth />
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="Senha" variant="outlined" name="senha" margin="normal" type='password'fullWidth />
                         <Box marginTop={2} textAlign="center">
-                                <Button type="submit" variant="contained" color="primary">Logar</Button>
+                                <Button type="submit" variant="contained" color="primary" className="loginBtn" disabled={loginForm}>Logar</Button>
                         </Box>
                     </form>
                     <Box display="flex" justifyContent="center" marginTop={2}>
@@ -80,7 +91,7 @@ function Login() {
                 variant="subtitle1"
                 gutterBottom
                 align="center"
-                className="textos1"
+                className="cadastroBtn"
               >
                 Cadastre-se
               </Typography>
