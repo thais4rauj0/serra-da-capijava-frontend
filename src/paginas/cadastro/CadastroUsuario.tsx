@@ -53,41 +53,43 @@ function CadastroUsuario() {
   }
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
-    if(confirmarSenha == user.senha){
+    if (confirmarSenha == user.senha) {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
       toast.success('Usuario cadastrado com sucesso', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: "colored",
-          progress: undefined,
-          });
-      }else{
-          toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              theme: "colored",
-              progress: undefined,
-              });
-      }
-}
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
+    } else {
+      toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
+    }
+  }
 
   const [formCadastro, setFormCadastro] = useState(true)
 
-  const padraoSenha = /^(?=.[0-9])(?=.[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/
+  const padraoSenha = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/
 
-  const padraoEmail = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
+  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
   useEffect(() => {
-    if(user.nome.length >= 2 && user.usuario.match(padraoEmail) && user.senha.match(padraoSenha)) {
+    if (user.nome.length >= 2 && user.usuario.match(padraoEmail) && user.senha.match(padraoSenha)) {
       setFormCadastro(false)
+    } else {
+      setFormCadastro(true)
     }
   }, [user])
 
