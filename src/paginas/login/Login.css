@@ -7,13 +7,13 @@
 }
 
 .imagem{
-  background-image: url(https://imgur.com/vMmRALp.png);
+  background-image: url(https://imgur.com/zpzSrQ3.png);
   background-repeat: no-repeat;
   width: 100vh;
   min-height: 100vh;
   background-size: 90%;
   background-position: center;
-  background-color: #FDFBF7;
+  background-color: #e9845d;
 }
 
 .formulario{
@@ -27,9 +27,9 @@
   text-decoration: none;
 }
 
-/* .fundo{
-  background-color: #FDFBF7;
-} */
+.fundo{
+  background-color: #e9845d;
+}
 
 .textos1{
   color: #02732A;
@@ -37,7 +37,7 @@
 }
 
 .loginBtn{
-  background-color: #caa78b !important;
+  background-color: #e5a04b !important;
   color: white;
   font-family: 'Josefin Sans', sans-serif !important;
 }
@@ -47,7 +47,7 @@
 }
 
 .cadastroBtn{
-  color: #f27544;
+  color: #f7926b;
   font-weight: bold !important;
   text-decoration: none !important;
   font-family: 'Josefin Sans', sans-serif !important;
@@ -57,9 +57,9 @@
   font-family: 'Josefin Sans', sans-serif !important;
 }
 
-/* .corFundo{
-  background-color: #f4f0e9;
-  margin: 0 1.4rem;
+.corFundo{
+  background-color: #F2EBDF;
+  margin-left: 1rem;
   border-radius: 1rem;
   padding: 1rem 0;
-} */
+}
