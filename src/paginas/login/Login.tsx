@@ -9,6 +9,9 @@ import './Login.css';
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../store/tokens/Action';
 import { toast } from 'react-toastify';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import GitHub from "@mui/icons-material/GitHub";
+
 
 function Login() {
 
@@ -115,7 +118,19 @@ function Login() {
               </Typography>
             </Link>
                     </Box>
-                    
+                    <div className="logo-login">
+              <img src="https://i.imgur.com/8GPmvfT.png" alt="" />
+            </div>
+          </Box>
+
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <a
+              href="https://github.com/thais4rauj0/serra-da-capijava-frontend"
+              target="_blank"
+              className="text-decorator-none"
+            >
+              <GitHub />
+            </a>
                 </Box>
             </Grid>
             <Grid xs={6} className="imagem"></Grid>
