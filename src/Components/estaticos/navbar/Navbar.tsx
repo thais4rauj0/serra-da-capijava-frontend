@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 export default function Navbar() {
-  const token = useSelector<TokenState,TokenState["tokens"]>(
+  const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   )
   let navigate = useNavigate()
@@ -101,15 +101,13 @@ export default function Navbar() {
 
   var navbarComponent;
 
-  if(token !== ""){
-    navbarComponent = 
+  if (token !== "") {
+    navbarComponent =
       <AppBar position="static">
         <Toolbar className="barra">
           <div>
             <Link to="/home" className="text-decorator-none">
-              <Typography className="typo" variant="h6" title="Home">
-                Serra da CapiJava
-              </Typography>
+              <img src="https://imgur.com/EW50AWW.png" alt="Logotipo" height={50} width={100} />
             </Link>
           </div>
           <Box className="textos">
@@ -120,6 +118,7 @@ export default function Navbar() {
                 </Typography>
               </Box>
             </Link>
+            <Divider orientation="vertical" flexItem />
             <Link to="/produtos/all" className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" className="typo">
@@ -127,13 +126,7 @@ export default function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to="/cadastroProduto" className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" className="typo">
-                  Cadastrar Produtos
-                </Typography>
-              </Box>
-            </Link>
+            <Divider orientation="vertical" flexItem />
             <Link to="/categoria" className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" className="typo">
@@ -141,6 +134,15 @@ export default function Navbar() {
                 </Typography>
               </Box>
             </Link>
+            <Divider orientation="vertical" flexItem />
+            <Link to="/cadastroProduto" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" className="typo">
+                  Cadastrar Produtos
+                </Typography>
+              </Box>
+            </Link>
+            <Divider orientation="vertical" flexItem />
             <Link to="/cadastroCategoria" className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" className="typo">
@@ -148,6 +150,7 @@ export default function Navbar() {
                 </Typography>
               </Box>
             </Link>
+            <Divider orientation="vertical" flexItem />
             <Box onClick={goLogout}>
               <Typography variant="h6" className="typo">
                 Sair
@@ -156,14 +159,14 @@ export default function Navbar() {
           </Box>
         </Toolbar>
       </AppBar>
-   
 
-}
+
+  }
   return (
     <>
       {navbarComponent}
     </>
-   
+
   );
 }
 function setToken(arg0: string) {
