@@ -41,7 +41,7 @@ function Home() {
     const imagens = [
         <Card
             sx={{
-                minHeight: "33vh"
+                minHeight: "35vh"
             }}
             className="space"
         >
@@ -63,7 +63,7 @@ function Home() {
 
         <Card
             sx={{
-                minHeight: "33vh"
+                minHeight: "35vh"
             }}
             className="space"
         >
@@ -85,7 +85,7 @@ function Home() {
 
         <Card
             sx={{
-                minHeight: "33vh"
+                minHeight: "35vh"
             }}
             className="space"
         >
@@ -107,7 +107,7 @@ function Home() {
 
         <Card
             sx={{
-                minHeight: "33vh"
+                minHeight: "35vh"
             }}
             className="space"
         >
@@ -129,7 +129,7 @@ function Home() {
 
         <Card
             sx={{
-                minHeight: "33vh"
+                minHeight: "35vh"
             }}
             className="space"
         >
