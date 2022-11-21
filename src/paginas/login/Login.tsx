@@ -187,10 +187,6 @@ function Login() {
               </Link>
             </Box>
           </Box>
-          
-          <div className="logo-login">
-            <img src="https://i.imgur.com/8GPmvfT.png" alt="" />
-          </div>
         </Box>
       </Grid>
       <Grid xs={6} className="imagem"></Grid>
