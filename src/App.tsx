@@ -24,8 +24,8 @@ import Inicial from './paginas/inicial/Inicial';
 function App() {
   return (
     <Provider store={store}>
-       <VLibras />
-       <ToastContainer/>      
+       <ToastContainer/> 
+       <VLibras />     
       <Router>
       <div style={{ minHeight: "100vh" }}>
         <Navbar />

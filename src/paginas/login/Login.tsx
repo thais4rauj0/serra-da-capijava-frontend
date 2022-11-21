@@ -1,8 +1,8 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-
 import { login } from "../../service/Service";
 import UserLogin from '../../model/UserLogin';
 import './Login.css';
@@ -12,12 +12,13 @@ import { toast } from 'react-toastify';
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GitHub from "@mui/icons-material/GitHub";
 
-
 function Login() {
-
   const dispatch = useDispatch();
-  const [token, setToken] = useState('')
+  const [token, setToken] = useState("");
   let navigate = useNavigate();
+
+
+
 
 
   const [userLogin, setUserLogin] = useState<UserLogin>(
@@ -34,7 +35,7 @@ function Login() {
       foto: "",
       token: "",
     }
-  );
+  
 
   const [respUserLogin, setRespUserLogin]= useState<UserLogin>({
     id: 0,
@@ -56,23 +57,27 @@ function Login() {
     });
   }
 
-  const [loginForm, setLoginForm] = useState(true)
+  const [loginForm, setLoginForm] = useState(true);
 
-  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   useEffect(() => {
     if (userLogin.usuario.match(padraoEmail) && userLogin.senha.length >= 8) {
+
       setLoginForm(false)
+
     } else {
-      setLoginForm(true)
+      setLoginForm(true);
     }
-  }, [userLogin])
+  }, [userLogin]);
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
     try {
+
       await login(`/usuarios/logar`, userLogin, setRespUserLogin)
       toast.success('Usuário logado com sucesso!', {
+
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -83,7 +88,9 @@ function Login() {
         progress: undefined,
       });
     } catch (error) {
+
       toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -97,7 +104,6 @@ function Login() {
   }
   useEffect(() => {
     if (token !== "") {
-
       dispatch(addToken(token));
       navigate("/home");
     }
@@ -126,14 +132,23 @@ function Login() {
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
-              <Typography className="Conta" variant="subtitle1" gutterBottom align="center">Não tem uma conta?</Typography>
+
+              <Typography
+                className="Conta"
+                variant="subtitle1"
+                gutterBottom
+                align="center"
+
+              >
+                Não tem uma conta?
+              </Typography>
             </Box>
             <Link to="/cadastrousuario">
               <Typography
                 variant="subtitle1"
                 gutterBottom
                 align="center"
-                className="cadastroBtn"
+                className="cadastroBtn "
 
               >
                 Cadastre-se
@@ -151,7 +166,11 @@ function Login() {
             target="_blank"
             className="text-decorator-none"
           >
-            <GitHub fontSize='large' />
+
+            <GitHub />
+
+         
+
           </a>
         </Box>
       </Grid>
