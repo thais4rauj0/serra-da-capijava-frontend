@@ -7,7 +7,7 @@ import { login } from "../../service/Service";
 import UserLogin from '../../model/UserLogin';
 import './Login.css';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/Action';
+import { addId, addToken } from '../../store/tokens/Action';
 import { toast } from 'react-toastify';
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GitHub from "@mui/icons-material/GitHub";
@@ -32,9 +32,22 @@ function Login() {
       telefone: 0,
       rg: 0,
       foto: "",
-      token: ""
+      token: "",
     }
   );
+
+  const [respUserLogin, setRespUserLogin]= useState<UserLogin>({
+    id: 0,
+      usuario: "",
+      senha: "",
+      nome: "",
+      endereco: '',
+      cpf: 0,
+      telefone: 0,
+      rg: 0,
+      foto: "",
+      token: "",
+  })
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
@@ -58,7 +71,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      await login(`/usuarios/logar`, userLogin, setToken)
+      await login(`/usuarios/logar`, userLogin, setRespUserLogin)
       toast.success('Usuário logado com sucesso!', {
         position: "top-right",
         autoClose: 2000,
@@ -89,6 +102,15 @@ function Login() {
       navigate("/home");
     }
   }, [token]);
+
+  useEffect(() => {
+    if (respUserLogin.token !== '') {
+
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      navigate("/home")
+    }
+  }, [respUserLogin.token]);
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center" className="fundo">
