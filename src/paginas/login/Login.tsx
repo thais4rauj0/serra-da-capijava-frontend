@@ -16,20 +16,27 @@ function Login() {
   const [token, setToken] = useState("");
   let navigate = useNavigate();
 
-  const [userLogin, setUserLogin] = useState<UserLogin>({
-    id: 0,
-    usuario: "",
-    senha: "",
-    nome: "",
-    endereco: "",
-    cpf: 0,
-    telefone: 0,
-    rg: 0,
-    foto: "",
-    token: "",
-  });
 
-  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+
+
+
+  const [userLogin, setUserLogin] = useState<UserLogin>(
+
+    {
+      id: 0,
+      usuario: "",
+      senha: "",
+      nome: "",
+      endereco: '',
+      cpf: 0,
+      telefone: 0,
+      rg: 0,
+      foto: "",
+      token: "",
+    }
+  ); 
+  
+  const [respUserLogin, setRespUserLogin]= useState<UserLogin>({
     id: 0,
     usuario: "",
     senha: "",
