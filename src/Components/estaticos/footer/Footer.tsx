@@ -20,10 +20,10 @@ function Footer() {
             <Typography variant="body1" align="center" gutterBottom className="textos">Nossas redes:</Typography>
             <Box display="flex" alignItems="center"  justifyContent="space-evenly">
                   <a href="https://www.instagram.com/capijavageneration/" target="_blank">
-                      <InstagramIcon className="redes"/>
+                      <InstagramIcon className="redesFooter"/>
                   </a>
                   <a href="https://github.com/thais4rauj0/serra-da-capijava-frontend" target="_blank">
-                      <GitHubIcon className="redes"/>
+                      <GitHubIcon className="redesFooter"/>
                   </a>
                   </Box>
               </Box>
@@ -31,7 +31,7 @@ function Footer() {
               <Box display="flex" alignItems="center" flexDirection="column" justifyContent="space-evenly">
             <Typography variant="body1" align="center" gutterBottom className="textos">Nosso contato:</Typography>
             <Box display="flex" alignItems="center"  justifyContent="space-evenly">
-            <EmailIcon className="redes"/>
+            <EmailIcon className="redesFooter"/>
             <Typography variant="body1" align="center" gutterBottom className="textos"> generationgrupo2@gmail.com</Typography>
             
                   </Box>
