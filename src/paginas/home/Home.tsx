@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokenReduce";
 import { toast } from "react-toastify";
 import TabProdutos from "../../Components/produtos/tabProdutos/TabProdutos";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import AliceCarousel from "react-alice-carousel";
 
 function Home() {
     const navigate = useNavigate();
