@@ -154,10 +154,11 @@ export default function Navbar() {
               <Divider orientation="vertical" flexItem />
             <Link to="/carrinho" className="text-decorator-none">
               <Box mx={1} className="cursor">
-              <Typography variant="h6" className="typo">
-                  Carrinho de Compras
-                </Typography>
-                <ShoppingCartIcon style={{color: 'white', fontSize: '50px'}}/>             
+              {/* <Typography variant="h6" className="typo"> */}
+                  {/* Carrinho de Compras */}
+                {/* </Typography> */}
+                <img src="https://i.imgur.com/nxXesY7.png" alt="" height={70} width={100} />
+                {/* <ShoppingCartIcon style={{color: 'white', fontSize: '50px'}}/>              */}
               </Box>
             </Link>
             <Divider orientation="vertical" flexItem />
