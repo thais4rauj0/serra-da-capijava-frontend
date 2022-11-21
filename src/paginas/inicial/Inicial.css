@@ -33,12 +33,3 @@
 
 
 
-.banner{
-    min-height: 45vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background:#e5a04b !important;
-    
-}
