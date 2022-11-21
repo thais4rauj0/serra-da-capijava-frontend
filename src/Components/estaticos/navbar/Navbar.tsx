@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokenReduce";
 import { addToken } from "../../../store/tokens/Action";
 import { toast } from "react-toastify";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -107,7 +108,7 @@ export default function Navbar() {
         <Toolbar className="barra">
           <div>
             <Link to="/home" className="text-decorator-none">
-              <img src="https://imgur.com/EW50AWW.png" alt="Logotipo" height={50} width={100} />
+              <img src="https://imgur.com/EW50AWW.png" alt="Logotipo" height={80} width={200} />
             </Link>
           </div>
           <Box className="textos">
@@ -149,6 +150,15 @@ export default function Navbar() {
                   Cadastrar Categorias
                 </Typography>
               </Box>
+              </Link>
+              <Divider orientation="vertical" flexItem />
+            <Link to="/carrinho" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+              <Typography variant="h6" className="typo">
+                  Carrinho de Compras
+                </Typography>
+                <ShoppingCartIcon style={{color: 'white', fontSize: '50px'}}/>             
+              </Box>
             </Link>
             <Divider orientation="vertical" flexItem />
             <Box onClick={goLogout}>
@@ -159,7 +169,6 @@ export default function Navbar() {
           </Box>
         </Toolbar>
       </AppBar>
-
 
   }
   return (
