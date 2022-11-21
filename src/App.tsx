@@ -19,6 +19,7 @@ import DeletarCategoria from './Components/categoria/deletarCategoria/DeletarCat
 import DeletarProdutos from './Components/produtos/deletarProdutos/DeletarProdutos';
 import VLibras from 'vlibras-react';
 import Carrinho from './paginas/carrinho/Carrinho';
+import Inicial from './paginas/inicial/Inicial';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
       <div style={{ minHeight: "100vh" }}>
         <Navbar />
           <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Inicial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />

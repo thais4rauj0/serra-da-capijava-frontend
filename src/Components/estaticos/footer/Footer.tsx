@@ -29,7 +29,7 @@ function Footer() {
               </Box>
               <Divider orientation="vertical" textAlign="center" flexItem />
               <Box display="flex" alignItems="center" flexDirection="column" justifyContent="space-evenly">
-            <Typography variant="body1" align="center" gutterBottom className="textos">Nossos contato:</Typography>
+            <Typography variant="body1" align="center" gutterBottom className="textos">Nosso contato:</Typography>
             <Box display="flex" alignItems="center"  justifyContent="space-evenly">
             <EmailIcon className="redes"/>
             <Typography variant="body1" align="center" gutterBottom className="textos"> generationgrupo2@gmail.com</Typography>
