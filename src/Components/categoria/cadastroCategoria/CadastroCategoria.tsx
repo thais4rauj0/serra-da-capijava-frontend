@@ -108,6 +108,8 @@ function CadastroCategoria() {
         navigate('/categoria');
     }
     return (
+        <div className='background-categoria'>
+
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h4" component="h1" align="center" className="textoForm">Formulário de cadastro Categoria</Typography>
@@ -117,6 +119,7 @@ function CadastroCategoria() {
                 </Button>
             </form>
         </Container>
+        </div>
     )
 }
 

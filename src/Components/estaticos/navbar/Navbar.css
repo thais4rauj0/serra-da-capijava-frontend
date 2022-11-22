@@ -1,4 +1,6 @@
-
+.MuiAppBar-root{
+    width: 100vw;
+}
 .barra{
     background-color: #f27544;
     display: flex;
