@@ -43,7 +43,6 @@ function App() {
           <Route path="/cadastroCategoria/:id" element={<CadastroCategoria/>} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           <Route path="/deletarProdutos/:id" element={<DeletarProdutos/>}/>
-          <Route path="/carrinho" element={<Carrinho />}/>
           </Routes>
           </div>
         <Footer />
