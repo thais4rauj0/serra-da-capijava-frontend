@@ -1,4 +1,5 @@
 import Categoria from './Categoria'
+import User from './User';
 
 interface Produtos{
     id: number;
@@ -8,8 +9,8 @@ interface Produtos{
     tamanho: string;
     quantidade: number;
     foto: string;
-    
     categoria?: Categoria | null
+    usuario?: User| null
 }
 
 export default Produtos;

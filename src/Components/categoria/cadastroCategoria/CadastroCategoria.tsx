@@ -15,6 +15,7 @@ function CadastroCategoria() {
     let navigate = useNavigate();
     const {id}= useParams<{id: string}>();
     const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
+    const userId = useSelector<TokenState, TokenState['id']>((state) => state.id )
 
 
     const [categoria, setCategoria] = useState<Categoria>({
@@ -52,7 +53,7 @@ function CadastroCategoria() {
             }
         })
       }
-
+    
       function updatedcategoria(e: ChangeEvent<HTMLInputElement>){
 
         setCategoria({

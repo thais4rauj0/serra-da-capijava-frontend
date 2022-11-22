@@ -1,3 +1,6 @@
+import Categoria from "./Categoria";
+import Produtos from "./Produtos";
+
 interface User{
     id: number;
     usuario: string;
@@ -8,6 +11,8 @@ interface User{
     telefone: number;
     rg: number;
     foto: string
+    produtos?: Produtos | null
+    categoria?: Categoria | null
 }
 
 export default User;
