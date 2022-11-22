@@ -71,7 +71,7 @@
 }
 
 .tituloCard{
-  font-family: 'Merriweather',sans-serif !important;
+  font-family: 'Merriweather', serif !important;
   color:  #e9845d !important;
   font-weight: bold !important;
 }
@@ -89,3 +89,4 @@
   background-color: white !important;
   justify-content: center;
 }
+

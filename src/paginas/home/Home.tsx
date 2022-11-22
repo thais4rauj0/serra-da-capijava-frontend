@@ -180,6 +180,7 @@ function Home() {
                             autoPlay
                             animationDuration={4000}
                             autoPlayInterval={5000}
+                            
                         />
                     </Box>
                 </div>

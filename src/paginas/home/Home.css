@@ -80,3 +80,51 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+@media (min-width: 1020px) and (max-width: 2000px) {
+  .banner{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.imgur.com/vgPr1su.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+@media (min-width: 2001px) and (max-width: 2800px) {
+  .banner{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.imgur.com/vgPr1su.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+
+.MuiPaper-rounded{
+  min-height: 50vh!important;
+  width: auto;
+  margin-left: 35px!important;
+}
+.alice-carousel__dots-item:not(.__custom){
+  width: 18px!important;
+  height: 18px!important;
+  background-color:#D2B298 !important;
+}  
+
+.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active{
+  background-color:#F18F01!important;
+}
+
+.alice-carousel__prev-btn-item, .alice-carousel__next-btn-item{
+    font-size: 24px;
+    color: #F18F01!important;
+}
