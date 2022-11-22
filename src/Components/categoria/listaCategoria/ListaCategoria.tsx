@@ -19,29 +19,7 @@ function ListaCategoria() {
   let navigate = useNavigate();
   const [categoria, setCategoria] = useState<Categoria[]>([]);
   const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
-  const [categoriaBuscado, setCategoriaBuscado] = useState('')
-
-  function updateBusca(event: ChangeEvent<HTMLInputElement>){
-    setCategoriaBuscado(
-      event.target.value
-    )
-  }
-  async function buscaCategoria() {
-    if(categoriaBuscado !== ''){
-      await busca(`/categoria/tipo/${categoriaBuscado}`, setCategoria, {
-        headers: {
-          Authorization: token
-        }
-      })
-    } else {
-      await busca('/categoria', setCategoria, {
-        headers: {
-          Authorization: token
-        }
-      })
-    }
-  }
-
+  const [categoriaBuscada, setCategoriaBuscada] = useState('')
 
 
   useEffect(() => {
@@ -60,6 +38,28 @@ function ListaCategoria() {
       navigate("/login");
     }
   }, [token]);
+
+  function updateBusca(event: ChangeEvent<HTMLInputElement>){
+    setCategoriaBuscada(
+      event.target.value
+    )
+  }
+
+  async function buscaCategoria() {
+    if(categoriaBuscada !== ''){
+      await busca(`/categoria/tipos/${categoriaBuscada}`, setCategoria, {
+        headers: {
+          Authorization: token
+        }
+      })
+    } else {
+      await busca('/categoria', setCategoria, {
+        headers: {
+          Authorization: token
+        }
+      })
+    }
+  }
 
   async function getCategoria() {
     await busca("/categoria", setCategoria, {
