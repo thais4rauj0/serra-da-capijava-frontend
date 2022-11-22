@@ -70,7 +70,7 @@ function ListaProdutos() {
 
   useEffect(() => {
     getProdutos();
-  }, [produtos.length]);
+  }, []);
 
   return (
     <>
@@ -90,7 +90,7 @@ function ListaProdutos() {
           </div>
         </div>}
 
-    {produtos.map((produtos, index) => (
+    {/* {produtos.map((produtos, index) => (
         <Box alignSelf="flex-start" >
           <Card variant="outlined" className="produtos">
             <CardContent>
@@ -142,7 +142,54 @@ function ListaProdutos() {
             </CardActions>
           </Card>
         </Box>
-       ))}
+       ))} */}
+
+{produtos.map((produto) => (
+          <div className="container">
+            <div className="imageContainer1">
+              <img src={produto.foto} alt="" />
+            </div>
+            <div className="nomeProduto"> {produto.nome} </div>
+            <div className="valores">
+              <div className="Produtoestoquepreco">
+                <span className="preco">R$ {produto.preco}</span>
+                <span className="descricao">{produto.descricao}</span>
+              </div>
+              <button className="button">
+                {" "}
+                <span> - </span> <span> 0 </span> <span> + </span>
+              </button>
+            </div>
+              <Box display="flex" justifyContent="center" mb={1.5}>
+                <Link
+                  to={`/formularioProduto/${produto.id}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button
+                      variant="contained"
+                      className="botãoAtualiza"
+                      size="small"
+                      color="primary"
+                    >
+                      atualizar
+                    </Button>
+                  </Box>
+                </Link>
+                <Link
+                  to={`/deletarProdutos/${produto.id}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' color="secondary" className="btnDeletar">
+                          deletar
+                        </Button>
+                  </Box>
+                </Link>
+              </Box>
+              <></>
+          </div>
+        ))}
     </Box>
 
        </>

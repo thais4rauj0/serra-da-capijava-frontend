@@ -54,7 +54,7 @@ function sim() {
     'Authorization':token
     }
   });
-  toast.success("Categoria deletada com sucesso", {
+  toast.success("Produto deletado com sucesso", {
     position:"top-right",
     autoClose:3000,
     hideProgressBar: false,
@@ -78,7 +78,7 @@ function nao(){
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar os Produtos:
+                Deseja deletar o seguinte Produto?
               </Typography>
               <Typography color="textSecondary" >
               {post?.nome}

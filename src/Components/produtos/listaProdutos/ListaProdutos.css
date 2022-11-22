@@ -62,6 +62,7 @@ input:hover {
   padding: 1rem;
   width: 96%;
   margin: 0 auto;
+  max-height: 65vh;
 }
 
 .js-preloader {
@@ -142,4 +143,125 @@ input:hover {
   margin-left: 16px;
   background: #F2C894;
   border-radius: 50%;
+}
+
+.listaprodutosFundo{
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #F6F6E9;
+}
+
+.marcadorLista {
+  list-style-type: none;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  
+}
+
+.btMesmaLinha{
+  display: inline;
+}
+
+.btnEstilo{
+  color: #272727;
+  background-color: #C9E265;
+  border: none;
+  height: 40px;
+  line-height: 20px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: 0 10px;
+  font-family: 'Barlow', sans-serif !important;
+}
+
+
+
+.container {
+  display: flex;
+  width: 17vw;
+  max-height: 50vh;
+  border-radius: 1rem;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0px 7px 16px 0px rgba(199, 198, 197, 0.88);
+  background-color: white;
+  
+}
+
+.imageContainer1 img {
+  width: 14vw;
+  aspect-ratio: 1;
+  justify-self: center;
+}
+.nomeProduto {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: bold;
+  text-align: center !important;
+  color: green;
+  margin: 1rem;
+}
+
+.valores {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-family: 'Barlow', sans-serif !important;
+  margin: 1rem;
+
+}
+.Produtoestoquepreco {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.preco{
+  font-size: 1.5rem;
+  color: #F27544;
+  margin-bottom: 1rem;
+}
+
+.descricao{
+  font-size: .90rem;
+}
+
+.button {
+  display: flex;
+  background-color: #C9E265;
+  width: 55px;
+  height: 32px;
+  border: 2px solid;
+  border-radius: 15px;
+  border-color: #C9E265;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: bold;
+  align-items: center;
+  font-family: 'Barlow', sans-serif !important;
+
+}
+.botãoAtualiza {
+  background-color: #457D58 !important;
+  font-family: 'Barlow', sans-serif !important;
+  
+
+}
+.botãoDeletar{
+  background-color: #BC4749  !important;
+  font-family: 'Barlow', sans-serif !important;
+}
+.containerLista{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

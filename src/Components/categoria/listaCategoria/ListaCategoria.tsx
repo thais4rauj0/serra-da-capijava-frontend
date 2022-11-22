@@ -28,7 +28,7 @@ function ListaCategoria() {
   }
   async function buscaCategoria() {
     if(categoriaBuscado !== ''){
-      await busca(`/categoria/tipo/${categoriaBuscado}`, setCategoria, {
+      await busca(`/categoria/tipos/${categoriaBuscado}`, setCategoria, {
         headers: {
           Authorization: token
         }
@@ -71,7 +71,7 @@ function ListaCategoria() {
 
   useEffect(() => {
     getCategoria();
-  }, [categoria.length]);
+  }, []);
   return (
     <>
     <div className="group">
