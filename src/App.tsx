@@ -17,7 +17,7 @@ import CadastroProdutos from './Components/produtos/cadastroProdutos/CadastroPro
 import CadastroCategoria from './Components/categoria/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './Components/categoria/deletarCategoria/DeletarCategoria';
 import DeletarProdutos from './Components/produtos/deletarProdutos/DeletarProdutos';
-import VLibras from 'vlibras-react';
+
 import Carrinho from './paginas/carrinho/Carrinho';
 import Inicial from './paginas/inicial/Inicial';
 
@@ -25,7 +25,7 @@ function App() {
   return (
     <Provider store={store}>
        <ToastContainer/> 
-       <VLibras />     
+         
       <Router>
       <div style={{ minHeight: "100vh" }}>
         <Navbar />
