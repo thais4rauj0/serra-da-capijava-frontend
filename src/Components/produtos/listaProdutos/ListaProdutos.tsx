@@ -93,14 +93,11 @@ function ListaProdutos() {
     {produtos.map((produtos, index) => (
         <Box alignSelf="flex-start" >
           <Card variant="outlined" className="produtos">
-            <div className='img-produto'>
-              <img src={produtos.foto} alt="" />
-            </div>
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
-              {produtos.categoria?.tipos}
+                Produtos
               </Typography>
-              <Typography variant="h5" component="h2" className='titulo-card'>
+              <Typography variant="h5" component="h2">
                 {produtos.nome}
               </Typography>
               <Typography variant="body2" component="p">
@@ -108,6 +105,9 @@ function ListaProdutos() {
               </Typography>
               <Typography variant="body2" component="p">
                 {produtos.preco}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {produtos.categoria?.tipos}
               </Typography>
               <Typography variant="h5" component="h2">
                 {produtos.tamanho}

@@ -1,62 +1,17 @@
-
-.background{
-    width: 100%;
-    height: 100vh;
-    background-image: url(https://i.imgur.com/iQxo3z2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
 .topo{
-    width:100%;
-    height: auto;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
-    background-color:rgba(242,200,148,0.75);
-    border-radius: 5px;
-    backdrop-filter: blur(5px)!important;
+    margin-top: 15rem;
 }
 
 .textoForm{
-    font-weight: bolder!important;
     color: #02732A;
     font-family: 'Josefin Sans', sans-serif !important;
 }
 
 .btnFinalizar{
-    background-color: #02732A !important;
+    background-color: #F2C894 !important;
 }
 
 .btnFinalizar:disabled{
     background-color: lightgray !important;
 }
-.MuiFormLabel-root.Mui-focused{
-    color:#02732A!important;
-}
-.input:focus, input:hover{
-    border-color:#02732A!important;
-}
 
-.macacode-form {
-    display: flex;
-    justify-content:end;
-    float: inline-end;
-}
-.macacode-form img{
-    width: 225px;
-    height: 235px;
-    margin-right: -180px;
-    margin-top: -15vh;
-    position: fixed;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
-    border-color: #02732A!important;
-}
-.MuiInput-underline:after{
-    border-bottom: #02732A!important;
-}

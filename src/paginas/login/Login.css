@@ -72,21 +72,12 @@
   transform: translate(30%, -950%);
 }
 
+
 .redes{
   font-size: 60px !important;
-  color: #e9845d;
+ color: #e9845d;
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
   border-color: #02732A!important;
 }
-
-.logo-login img{
-    max-width: 250px;
-    max-height: 2150px;
-    transform: translate(30%, -950%);
-}
-.MuiInputBase-fullWidth{
-  width: 95%!important;
-}
-

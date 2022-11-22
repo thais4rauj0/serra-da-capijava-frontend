@@ -137,9 +137,6 @@ function back(){
     navigate('/produtos/all')
 }
     return (
-        <div className='background'>
-
-
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit} >
                 <Typography variant="h4" component="h1" align="center" className="textoForm">Cadastro de Produtos</Typography>
@@ -170,12 +167,7 @@ function back(){
                     </Button>
                 </FormControl>
             </form>
-
-            <div className='macacode-form'>
-                <img src="https://i.imgur.com/oYIlfx8.png" alt="" />
-            </div>
         </Container>
-        </div>
     )
 }
 export default CadastroProdutos;
