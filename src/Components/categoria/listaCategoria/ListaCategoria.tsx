@@ -20,6 +20,7 @@ function ListaCategoria() {
   const [categoria, setCategoria] = useState<Categoria[]>([]);
   const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
   const [categoriaBuscado, setCategoriaBuscado] = useState('')
+  
 
   function updateBusca(event: ChangeEvent<HTMLInputElement>){
     setCategoriaBuscado(

@@ -21,6 +21,7 @@ function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produtos[]>([]);
   const token = useSelector<TokenState,TokenState["tokens"]>((state)=> state.tokens);
   const [produtoBuscado, setProdutoBuscado] = useState('')
+  const userId = useSelector<TokenState, TokenState['id']>((state) => state.id )
 
   function updateBusca(event: ChangeEvent<HTMLInputElement>){
     setProdutoBuscado(
@@ -116,6 +117,7 @@ function ListaProdutos() {
                 {produtos.quantidade}
               </Typography>
             </CardContent>
+            {produtos.usuario?.id === +userId &&
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
@@ -139,7 +141,7 @@ function ListaProdutos() {
                   </Box>
                 </Link>
               </Box>
-            </CardActions>
+            </CardActions>}
           </Card>
         </Box>
        ))}
