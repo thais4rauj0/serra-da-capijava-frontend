@@ -201,6 +201,13 @@ input:hover {
 
 .descricao{
   font-size: .90rem;
+  margin-bottom: 1rem;
+}
+
+.categoria{
+  font-size: .80rem;
+  font-weight: lighter;
+  color: lightgray;
 }
 
 .button {

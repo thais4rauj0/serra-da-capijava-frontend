@@ -91,62 +91,6 @@ function ListaProdutos() {
           </div>
         </div>}
 
-    {/* {produtos.map((produtos, index) => (
-        <Box alignSelf="flex-start" >
-          <Card variant="outlined" className="produtos">
-            <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Produtos
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {produtos.nome}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {produtos.descricao}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {produtos.preco}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {produtos.categoria?.tipos}
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {produtos.tamanho}
-                </Typography>
-              <Typography variant="h5" component="h2">
-                {produtos.quantidade}
-              </Typography>
-            </CardContent>
-            {produtos.usuario?.id === +userId &&
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/cadastroProduto/${produtos.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                  <Button variant="contained" size='small' className="btnAtualizar" >
-                          atualizar
-                        </Button>
-                  </Box>
-                </Link>
-                <Link
-                  to={`/deletarProdutos/${produtos.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button variant="contained" size='small' color="secondary" className="btnDeletar">
-                          deletar
-                        </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>}
-          </Card>
-        </Box>
-       ))}
-    </Box> */}
-
 {produtos.map((produto) => (
           <div className="container">
             <div className="imageContainer1">
@@ -157,6 +101,7 @@ function ListaProdutos() {
               <div className="Produtoestoquepreco">
                 <span className="preco">R$ {produto.preco}</span>
                 <span className="descricao">{produto.descricao}</span>
+                <span className="categoria">Categoria: {produto.categoria?.tipos}</span>
               </div>
               <button className="button">
                 {" "}
